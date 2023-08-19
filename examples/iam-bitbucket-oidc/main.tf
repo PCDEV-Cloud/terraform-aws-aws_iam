@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.13.0"
-    }
-  }
-}
-
 provider "aws" {
   region = "eu-west-1"
 }
@@ -14,16 +5,16 @@ provider "aws" {
 module "iam-bitbucket-oidc" {
   source = "../../modules/iam-bitbucket-oidc"
 
-  identity_provider_url = "https://api.bitbucket.org/2.0/workspaces/thesoftwarehouse/pipelines-config/identity/oidc"
-  audience              = "ari:cloud:bitbucket::workspace/8e8cbe54-0e71-4f36-a51e-69cc9b9a9ee9"
+  identity_provider_url = "https://api.bitbucket.org/2.0/workspaces/pcdev/pipelines-config/identity/oidc"
+  audience              = "ari:cloud:bitbucket::workspace/7c8dgv46-0v64-5n37-a83u-83hh8f8e8hh8"
 
   repositories = [
     {
-      name = "application"
+      name = "pcdev-app"
       uuid = "{fjndskjnf}"
     },
     {
-      name = "infrastructure"
+      name = "pcdev-infra"
       uuid = "{kjdsllkjfsd}"
     }
   ]
