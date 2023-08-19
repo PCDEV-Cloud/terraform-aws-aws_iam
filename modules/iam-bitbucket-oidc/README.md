@@ -1,11 +1,8 @@
-# AWS IAM Terraform module
+# AWS Bitbucket OIDC Provider
 
-## Features
-1. Create IAM identity providers with set of roles and permissions for external identities, e.g. Terraform Cloud/Enterprise, Bitbucket, etc.
+Terraform module which creates OIDC provider and access roles for specific Bitbucket repositories.
 
 ## Usage
-
-`iam-bitbucket-oidc`
 
 ```hcl
 module "iam-bitbucket-oidc" {
