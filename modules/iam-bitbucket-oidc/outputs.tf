@@ -1,4 +1,4 @@
-# output "iam_role_arns" {
-#   value       = { for k, v in module.iam_iam-assumable-role-with-oidc : k => v.iam_role_arn }
-#   description = "Returns OIDC IAM role ARNs."
-# }
+output "role_arns" {
+  value       = [for i, k in aws_iam_role.assumable-with-oidc : k.arn]
+  description = "A list of assumable OIDC IAM role ARNs."
+}
