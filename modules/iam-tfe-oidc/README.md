@@ -10,16 +10,16 @@ module "iam-tfe-oidc" {
 
   access_configuration = [
     {
-      organization = "PCDEV"
+      organization = "my-company"
       run_phase    = "plan"
     },
     {
-      organization = "PCDEV"
+      organization = "my-company"
       workspaces   = ["WorkloadsTest", "WorkloadsStag"]
       run_phase    = "apply"
     },
     {
-      organization = "PCDEV"
+      organization = "my-company"
       workspaces   = ["WorkloadsProd"]
       run_phase    = "apply"
     }
