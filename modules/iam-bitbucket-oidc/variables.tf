@@ -1,6 +1,6 @@
 variable "identity_provider_url" {
   type        = string
-  description = ""
+  description = "The URL of the identity provider."
 
   validation {
     condition     = startswith(var.identity_provider_url, "https://")
@@ -10,13 +10,13 @@ variable "identity_provider_url" {
 
 variable "audience" {
   type        = string
-  description = ""
+  description = "The identity provider's client ID."
 }
 
 variable "thumbprints" {
   type        = list(string)
   default     = ["a031c46782e6e6c662c2c87c76da9aa62ccabd8e"]
-  description = ""
+  description = "A list of server certificate thumbprints for the identity provider's server certificate."
 }
 
 variable "repositories" {
@@ -30,11 +30,11 @@ variable "repositories" {
     }
   ))
   default     = []
-  description = ""
+  description = "A list of objects that define the name and UUID of the repository and optionally environments."
 }
 
 variable "tags" {
   type        = map(string)
   default     = {}
-  description = ""
+  description = "A map of resource tags for the identity provider and IAM roles."
 }
