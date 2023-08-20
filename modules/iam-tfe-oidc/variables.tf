@@ -1,7 +1,7 @@
 variable "identity_provider_url" {
   type        = string
   default     = "https://app.terraform.io"
-  description = ""
+  description = "The URL of the identity provider."
 
   validation {
     condition     = startswith(var.identity_provider_url, "https://")
@@ -12,13 +12,13 @@ variable "identity_provider_url" {
 variable "audience" {
   type        = string
   default     = "aws.workload.identity"
-  description = ""
+  description = "The identity provider's client ID."
 }
 
 variable "thumbprints" {
   type        = list(string)
   default     = ["9e99a48a9960b14926bb7f3b02e22da2b0ab7280"]
-  description = ""
+  description = "A list of server certificate thumbprints for the identity provider's server certificate."
 }
 
 variable "access_configuration" {
@@ -28,11 +28,11 @@ variable "access_configuration" {
     workspaces   = optional(list(string), ["*"])
     run_phase    = optional(string, "*")
   }))
-  description = "description"
+  description = "A list of objects in which access to the AWS account is defined. Each object creates a separate IAM role. The organization, project, workspaces and run phase to which access is to be granted must be defined."
 }
 
 variable "tags" {
   type        = map(string)
   default     = {}
-  description = ""
+  description = "A map of resource tags for the identity provider and IAM roles."
 }
