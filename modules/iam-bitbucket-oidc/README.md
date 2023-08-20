@@ -9,12 +9,12 @@ module "iam-bitbucket-oidc" {
   source = "github.com/PCDEV-Cloud/terraform-aws-aws_iam_identity_center//modules/iam-bitbucket-oidc"
 
   # Open a Bitbucket repository and go to Repository settings -> OpenID Connect in the Pipelines section to get all the details.
-  identity_provider_url = "<PROVIDER_URL>"
-  audience              = "<AUDIENCE>"
+  identity_provider_url = "https://api.bitbucket.org/2.0/workspaces/my-company/pipelines-config/identity/oidc"
+  audience              = "ari:cloud:bitbucket::workspace/7c8dgv46-0v64-5n37-a83u-83hh8f8e8hh8"
 
   repositories = [
     {
-      name = "<REPOSITORY_NAME>"
+      name = "my-repository"
       uuid = "<REPOSITORY_UUID>"
 
       environment_names = [
